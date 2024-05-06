@@ -6,9 +6,9 @@
 
 <form method="POST" action="/notes">
     <label for="body" class="form-label">Body</label>
-  <textarea class="form-control" id="body" name="body" style="width:30rem"> 
+  <input class="form-control" id="body" name="body" style="width:30rem"> 
   <?= $_POST['body'] ?? '' ?>
-  </textarea>  
+</input>  
   <?php if (isset($errors['body'])) : ?>
     <p class="text-danger"><?= $errors['body'] ?></p>
   <?php endif; ?>

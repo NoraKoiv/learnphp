@@ -24,7 +24,7 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">Log in</a></li>
-                  <li><a class="dropdown-item" href="#">Create account</a></li>
+                  <li><a class="dropdown-item" href="/register">Create account</a></li>
                   <li><hr class="dropdown-divider"></li>
                 </ul>
               </li>
