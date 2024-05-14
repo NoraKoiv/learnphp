@@ -18,7 +18,20 @@
               <li class="nav-item">
                 <a class="<?= urlIs('/notes') ? "nav-link active" : "nav-link";?>" href="/notes">Notes</a>
               </li>
-              <li class="nav-item dropdown">
+              <!-- Testing out -->
+              <?php if ($_SESSION['user'] ?? false) : ?>
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Log out
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Log out</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                </ul>
+                </li>
+
+                <?php else : ?>
+                  li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Log in
                 </a>
@@ -28,6 +41,22 @@
                   <li><hr class="dropdown-divider"></li>
                 </ul>
               </li>
+              <?php endif; ?>
+
+
+
+
+
+              <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Log in
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Log in</a></li>
+                  <li><a class="dropdown-item" href="/register">Create account</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                </ul>
+              </li> -->
             </ul>
             <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
