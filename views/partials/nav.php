@@ -31,12 +31,12 @@
                 </li>
 
                 <?php else : ?>
-                  li class="nav-item dropdown">
+                  <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Log in
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Log in</a></li>
+                  <li><a class="dropdown-item" href="/login">Log in</a></li>
                   <li><a class="dropdown-item" href="/register">Create account</a></li>
                   <li><hr class="dropdown-divider"></li>
                 </ul>
