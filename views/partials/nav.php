@@ -15,53 +15,39 @@
               <li class="nav-item">
                 <a class="<?= urlIs('/admin') ? "nav-link active" : "nav-link";?>" href="/admin">Admin</a>
               </li>
+              <?php if ($_SESSION['user'] ?? false) : ?>
               <li class="nav-item">
                 <a class="<?= urlIs('/notes') ? "nav-link active" : "nav-link";?>" href="/notes">Notes</a>
               </li>
-              <!-- Testing out -->
-              <?php if ($_SESSION['user'] ?? false) : ?>
-                <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <?php endif ?>
+
+<!-- testing out again -->
+<?php if ($_SESSION['user'] ?? false) : ?>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Log out
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Log out</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                </ul>
-                </li>
-
-                <?php else : ?>
-                  <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Log in
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="/login">Log in</a></li>
-                  <li><a class="dropdown-item" href="/register">Create account</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                </ul>
-              </li>
-              <?php endif; ?>
-
-
-
-
-
-              <!-- <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Log in
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Log in</a></li>
-                  <li><a class="dropdown-item" href="/register">Create account</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                </ul>
-              </li> -->
-            </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+    </a>
+    <ul class="dropdown-menu">
+    <form method="POST" action="/session">
+    <input type="hidden" name="_method" value="DELETE"/>
+      <li><a class="dropdown-item" href="/logout">Log out</a></li>
+      <li><hr class="dropdown-divider"></li>
+      </form>
+    </ul>
+   </li>
+   <?php else : ?>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Log in
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="/login">Log in</a></li>
+        <li><a class="dropdown-item" href="/register">Create account</a></li>
+        <li><hr class="dropdown-divider"></li>
+       </ul>
+     </li>
+  <?php endif; ?>
+</ul>
           </div>
         </div>
-      </nav>
+</nav>
