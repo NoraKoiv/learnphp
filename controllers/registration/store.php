@@ -29,6 +29,8 @@ if ($user) {
         'password' => password_hash($password, PASSWORD_BCRYPT)
     ]);
 
+    $user = ['email'=>$email];
+
     login($user);
 
     header('location: /');

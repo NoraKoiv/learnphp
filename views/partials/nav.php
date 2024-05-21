@@ -30,7 +30,7 @@
     <ul class="dropdown-menu">
     <form method="POST" action="/session">
     <input type="hidden" name="_method" value="DELETE"/>
-      <li><a class="dropdown-item" href="/logout">Log out</a></li>
+      <li><button class="dropdown-item">Log out</button></li>
       <li><hr class="dropdown-divider"></li>
       </form>
     </ul>
