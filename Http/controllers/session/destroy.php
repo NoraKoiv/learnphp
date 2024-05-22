@@ -2,7 +2,8 @@
 
 use Core\Authenticator;
 
-logout();
+$authenticator = new Authenticator;
+$authenticator->logout();
 
 header('location: /');
 exit();
